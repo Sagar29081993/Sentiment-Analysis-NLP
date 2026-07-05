@@ -21,3 +21,11 @@ history = model.fit(
     batch_size=32,
     validation_split=0.2
 )
+
+model.save("models/sentiment_model.keras")
+
+plt.plot(history.history["accuracy"], label="Training Accuracy")
+plt.plot(history.history["val_accuracy"], label="Validation Accuracy")
+plt.legend()
+plt.title("Training History")
+plt.savefig("results/training_history.png")
